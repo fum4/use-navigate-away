@@ -1,0 +1,43 @@
+{
+  "name": "navigate-away",
+  "version": "0.0.1",
+  "description": "Intercept navigation events before React notices",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "scripts": {
+    "build": "rm -rf lib && NODE_ENV=production tsc",
+    "release": "release-it"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nomadware-io/navigate-away.git"
+  },
+  "keywords": [
+    "react",
+    "navigate",
+    "history",
+    "away",
+    "block"
+  ],
+  "author": "fum4",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nomadware-io/navigate-away/issues"
+  },
+  "homepage": "https://github.com/nomadware-io/navigate-away#readme",
+  "peerDependencies": {
+    "history": "^5.0.0",
+    "react": "^18.0.0",
+    "react-router": "^6.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.9",
+    "@babel/core": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "@babel/preset-react": "^7.18.6",
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/history": "^4.7.11",
+    "release-it": "^15.5.1",
+    "typescript": "^4.7.4"
+  }
+}
