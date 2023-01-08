@@ -1,19 +1,20 @@
-import { History } from 'history';
+import React from 'react';
+import type { History } from 'history';
 
-import NavigateAway, { NavigateAwayProps } from './NavigateAway';
-import useNavigateAway, { NavigateAwayCallbackParams, NavigateAwayCallback } from './useNavigateAway';
+import { NavigateAwayProps, NavigateAwayCallbackParams, NavigateAwayCallback } from './types';
+import useNavigateAway from './useNavigateAway';
 
 const configureNavigateAway = (history: History) => {
-  const NavigateAwayWithHistory = (props: NavigateAwayProps) => (
-    <NavigateAway history={history} {...props} />
-  );
+  const NavigateAway = (props: NavigateAwayProps): null => {
+    useNavigateAway(props.callback, props.history || history);
+    return null;
+  }
 
   return {
-    NavigateAway: NavigateAwayWithHistory,
+    NavigateAway,
     useNavigateAway: (callback: NavigateAwayCallback, _history?: History) => useNavigateAway(callback, _history || history),
   };
 };
 
-export type { NavigateAwayProps, NavigateAwayCallback, NavigateAwayCallbackParams };
-
+export * from './types';
 export default configureNavigateAway;

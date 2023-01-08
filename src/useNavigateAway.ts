@@ -1,17 +1,10 @@
 import { useRef, useLayoutEffect } from 'react';
-import { type NavigateFunction, useNavigate } from 'react-router';
-import { type Action, type Update, type Location } from 'history';
+import { NavigateFunction, useNavigate } from 'react-router';
+import type { Update, History } from 'history';
 
-export interface NavigateAwayCallbackParams {
-  action: Action;
-  nextLocation: Location;
-  navigate: NavigateFunction;
-}
+import { NavigateAwayCallback } from './types';
 
-export type NavigateAwayCallback = ({ action, nextLocation }: NavigateAwayCallbackParams) => void;
-
-// Do not use to block navigation
-const useNavigateAway = (callback: NavigateAwayCallback, history) => {
+const useNavigateAway = (callback: NavigateAwayCallback, history: History) => {
   const navigate = useNavigate();
   const callbackRef = useRef(callback);
 

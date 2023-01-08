@@ -1,7 +1,7 @@
 {
-  "name": "navigate-away",
+  "name": "@nw/navigate-away",
   "version": "0.0.1",
-  "description": "Intercept navigation events before React notices",
+  "description": "Intercept navigation events before they happen!",
   "main": "lib/index.js",
   "module": "lib/index.js",
   "scripts": {
